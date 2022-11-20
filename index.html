@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>etch-a-sketch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div class="grid-container"></div>
+    <header><h1>Etch-a-sketch</h1></header>
+
+    <div class="grid-container" ondragstart="return false;" ondrop="return false;"></div>
+
+    <main class="main">
+        <div class="color">
+            <button>Color</button>
+        </div>
+        <div class="erase">
+            <button>Erase</button>
+        </div>
+        <div class="clear">
+            <button>Clear</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright © 2022 Lucas-AVS</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
