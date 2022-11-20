@@ -1,4 +1,8 @@
 let container = document.querySelector('.grid-container');
+let btnClear = document.querySelector('.clear');
+let currentColor = 'black';
+let btnErase = document.querySelector('.erase');
+let btnColor = document.querySelector('.color');
 
 function getGrid(n) {
     for(i = 0; i < n; i++) {
@@ -9,22 +13,38 @@ function getGrid(n) {
     }
 }
 
-getGrid(256)
+getGrid(256);
 
-let stopDrawing = (e) => e.path[0].style.backgroundColor = "black";
-
+let startDrawing = (e) => {
+    if(e.path[0].classList.contains('grid-item')) {e.path[0].style.backgroundColor = currentColor;};
+} ;
 
 addEventListener('mousedown', function(e){
     if(e.path[0].classList.contains('grid-item')) {
-        
-        this.addEventListener('mouseup', function(){
-            removeEventListener('mouseover', stopDrawing)
-        })
-    
-        this.addEventListener('mouseover', stopDrawing)    
-        
-        console.log(e.path[0].classList)
+        addEventListener('mouseup', function(){
+            removeEventListener('mouseover', startDrawing);
+        });
+        addEventListener('mouseover', startDrawing) ;   
     }
 }) 
 
-    
+btnClear.addEventListener('click',
+function() {
+        let allGridItems = document.querySelectorAll('.grid-item');
+        allGridItems.forEach(div => {
+            div.style.backgroundColor = "white";
+        });
+    }
+);
+
+btnErase.addEventListener('click',
+function() {
+        currentColor = 'white';
+    }
+);
+
+btnColor.addEventListener('click',
+function() {
+        currentColor = 'black';
+    }
+);
