@@ -16,17 +16,26 @@
 <body>
     <header><h1>Etch-a-sketch</h1></header>
 
-    <div class="grid-container" ondragstart="return false;" ondrop="return false;"></div>
-
+    
     <main class="main">
-        <div class="color">
-            <button>Color</button>
-        </div>
-        <div class="erase">
-            <button>Erase</button>
-        </div>
-        <div class="clear">
-            <button>Clear</button>
+        <div class="grid-container" ondragstart="return false;" ondrop="return false;"></div>
+        
+        <div class="column">
+            <p>Click the circle to select a color</p>
+            <div class="color-pick">
+                <input type="color" class="colorPicker" value="#34495E">    
+            </div>
+            <div class="inputs">
+                <div>
+                    <button class="color">Color</button>
+                </div>
+                <div class="erase">
+                    <button>Erase</button>
+                </div>
+                <div class="clear">
+                    <button>Clear</button>
+                </div>
+            </div>
         </div>
     </main>
 
