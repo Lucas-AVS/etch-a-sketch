@@ -2,7 +2,6 @@ let container = document.querySelector('.grid-container');
 let btnClear = document.querySelector('.clear');
 let currentColor = 'black';
 let btnErase = document.querySelector('.erase');
-let btnColor = document.querySelector('.color');
 
 function getGrid(n) {
     for(i = 0; i < n; i++) {
@@ -43,8 +42,26 @@ function() {
     }
 );
 
-btnColor.addEventListener('click',
-function() {
-        currentColor = 'black';
-    }
-);
+// Color picker
+let colorPicker;
+const defaultColor = "#383737";
+
+window.addEventListener("load", startup, false);
+
+function startup() {
+    colorPicker = document.querySelector('.colorPicker');
+    colorPicker.value = defaultColor;
+    colorPicker.addEventListener("input", updateFirst, false);
+  }
+
+  function updateFirst(event) {
+    currentColor = event.target.value;
+    currentColor = colorPicker.value
+  };
+
+colorButton = document.querySelector('.color');
+colorButton.addEventListener('click', function() {
+    currentColor = colorPicker.value
+}
+
+)
