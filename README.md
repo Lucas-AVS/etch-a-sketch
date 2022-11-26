@@ -6,10 +6,12 @@ Etch a Sketch
 <br>
 
 <p align="center">
-  <img alt="etch a sketch preview" src="./github/preview.jpg" width="100%">
+  <img alt="etch a sketch preview" src="preview.jpg" width="100%">
 </p>
 
 
-<p>💻 [Project](https://www.figma.com/file/J1Z33MISC22YZB8wfxiIns/NLW-Copa-Explorer/duplicate): A browser version of an Etch-A-Sketch.</p>
+<p>💻 Project: A browser version of an Etch-A-Sketch.</p>
+https://www.theodinproject.com/lessons/foundations-etch-a-sketch
+
 
 ---
