@@ -6,7 +6,7 @@ Etch a Sketch
 <br>
 
 <p align="center">
-  <img alt="etch a sketch preview" src="preview.jpg" width="100%">
+  <img alt="etch a sketch preview" src="preview.png" width="100%">
 </p>
 
 
