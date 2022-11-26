@@ -1,7 +1,8 @@
 let container = document.querySelector('.grid-container');
-let btnClear = document.querySelector('.clear');
+let clearButton = document.querySelector('.clear');
+let colorButton = document.querySelector('.color');
+let eraseButton = document.querySelector('.erase');
 let currentColor = 'black';
-let btnErase = document.querySelector('.erase');
 
 function getGrid(n) {
     for(i = 0; i < n; i++) {
@@ -12,22 +13,23 @@ function getGrid(n) {
     }
 }
 
-getGrid(256);
+//grid number is a number thats equal height * weight. Ex: (32 * 32 = 1024) (16 * 16 = 256)...
+getGrid(1024);
 
 let startDrawing = (e) => {
     if(e.path[0].classList.contains('grid-item')) {e.path[0].style.backgroundColor = currentColor;};
-} ;
+};
 
 addEventListener('mousedown', function(e){
     if(e.path[0].classList.contains('grid-item')) {
         addEventListener('mouseup', function(){
             removeEventListener('mouseover', startDrawing);
         });
-        addEventListener('mouseover', startDrawing) ;   
+        addEventListener('mouseover', startDrawing);   
     }
 }) 
 
-btnClear.addEventListener('click',
+clearButton.addEventListener('click',
 function() {
         let allGridItems = document.querySelectorAll('.grid-item');
         allGridItems.forEach(div => {
@@ -35,10 +37,19 @@ function() {
         });
     }
 );
+colorButton.addEventListener('click', 
+function() {
+    currentColor = colorPicker.value;
+    colorButton.setAttribute('id','selected');
+    eraseButton.removeAttribute('id','selected');
+    }
+);
 
-btnErase.addEventListener('click',
+eraseButton.addEventListener('click',
 function() {
         currentColor = 'white';
+        eraseButton.setAttribute('id','selected');
+        colorButton.removeAttribute('id','selected');
     }
 );
 
@@ -54,14 +65,7 @@ function startup() {
     colorPicker.addEventListener("input", updateFirst, false);
   }
 
-  function updateFirst(event) {
+function updateFirst(event) {
     currentColor = event.target.value;
-    currentColor = colorPicker.value
-  };
-
-colorButton = document.querySelector('.color');
-colorButton.addEventListener('click', function() {
-    currentColor = colorPicker.value
-}
-
-)
+    currentColor = colorPicker.value;
+};
