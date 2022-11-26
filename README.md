@@ -1,4 +1,3 @@
-Etch a Sketch
 <h1 align="center"> Etch a Sketch </h1>
 
 <p align="center">🚀 Etch a sketch game created with HTML, CSS and JS.</p>
